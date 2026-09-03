@@ -4,6 +4,8 @@
 # Container engine. Podman is what this machine runs; override with
 #   make CONTAINER=docker <target>
 CONTAINER ?= podman
+# Keep in sync with package.json and .github/workflows/lint.yml.
+PRETTIER_VERSION ?= 3.9.6
 COMPOSE ?= $(CONTAINER) compose
 # Published port: from .env when it exists, otherwise the compose default.
 PORT := $(shell sed -n 's/^HTTP_PORT=//p' .env 2>/dev/null | tail -1)
@@ -43,7 +45,7 @@ lint: ## Run the linters
 	$(COMPOSE) run --rm --no-deps api npx eslint src
 
 fmt: ## Format the sources
-	npx prettier --write .
+	npx --yes prettier@$(PRETTIER_VERSION) --write .
 
 clean: ## Stop the stack and delete the volumes
 	$(COMPOSE) down -v
