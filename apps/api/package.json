@@ -1,0 +1,21 @@
+{
+  "name": "@eatai/api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EatAI REST API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "lint": "eslint src",
+    "fmt": "prettier --write src"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openai": "^4.21.1",
+    "pg": "^8.11.3"
+  }
+}

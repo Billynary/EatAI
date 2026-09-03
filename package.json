@@ -1,0 +1,19 @@
+{
+  "name": "eatai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart food management: inventory, expiry alerts, shopping list, AI recipes",
+  "workspaces": [
+    "apps/api"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3"
+  }
+}
